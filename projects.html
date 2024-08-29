@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Kujtesa - I'm Full-stack Developer.</title>
+  <meta name="title" content="Kujtesa - I'm Full-stack Developer.">
+  <meta name="description" content="This is a personal portfolio ">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/logo/logo2.png" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.jpg">
+  <link rel="preload" as="image" href="./assets/images/Blog.svg">
+
+    <link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body>
+
+
+  <body>
+    <video autoplay muted loop id="background-video">
+      <source src="assets/images/projects/file.mp4" type="video/mp4">
+    </video>
+
+
+    <header>
+        <h1>My Projects</h1>
+    </header>
+
+    <section id="projects">
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/adventure.png" alt="Project 1">
+          <h2>Adventure Game</h2>
+          <p>This project invites one or more players to start an exciting adventure, exploring rooms, collecting treasures, 
+            and facing exciting challenges.  The game is in Albanian language, offering a localized and immersive experience for users.
+
+          </p>
+          <button onclick="showAlert('Project 1')">View Details</button>
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/calculator.png" alt="Project 2">
+          <h2>Math Calculator</h2>
+          <p>Web-based math calculator. Implement basic arithmetic operations, test thoroughly, and handle invalid inputs.
+             Extend to complex expressions using the Shunting Yard Algorithm.
+             Incorporate advanced features like trigonometric functions and create custom tests.</p>
+          <a href="https://github.com/KPaccarizi/Math-Calculator" target="_blank">
+            <button>View Details</button>
+        </a>
+      
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/community.png" alt="Project 3">
+          <h2> 100 Community Website</h2>
+          <p>Developed a custom website for 100 Community Org. using Wix. 
+            The site features a responsive design that ensures seamless user experience across both large desktop screens and smaller mobile devices. 
+            This project is private, no details are available at this time.
+
+          </p>
+          <a href="" target="_blank">
+            <button>No Details</button>
+        </a>
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/game.png" alt="Project 4">
+          <h2>Minesweeper</h2>
+          <p>This is a classic Minesweeper game implemented in Python using Tkinter for the GUI. 
+            It allows players to click on tiles to uncover them while avoiding mines. The goal is to uncover all tiles that are not mines without triggering a mine.
+
+          </p>
+          <a href="https://github.com/KPaccarizi/Minesweeper" target="_blank">
+            <button>View Details</button>
+        </a>
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/pacman.png" alt="Project 5">
+          <h2>PacMan</h2>
+          <p>This is a learning project to explore the possibilities of Pygame and develop game applications.
+            The game continuously updates the screen to handle movement and collisions. 
+            Pac-Man’s movement is controlled by user input, and the game checks for collisions.
+
+          </p>
+          <a href="https://github.com/KPaccarizi/PacMan" target="_blank">
+            <button>View Details</button>
+        </a>
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/penguin.gif" alt="Project 6">
+          <h2>Penguin Animation</h2>
+          <p>This project features a penguin animation with a waving hand and a greeting message that appears when the mouse is near. 
+            HTML sets up the structure, CSS handles styling and animation, and JavaScript manages the hand animation and message visibility.
+          </p>
+          <a href="https://github.com/KPaccarizi/Penguin" target="_blank">
+            <button>View Details</button>
+        </a>
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/pong.png" alt="Project 7">
+          <h2>Pong Table</h2>
+          <p>2D Pong game made with Python 3 and Tkinter where you play against an intentionally imperfect computer opponent. 
+            Features a table setup, user-controlled paddles, ball movement, and a computer player with a touch of randomness.
+          
+           </p>
+          <a href="https://github.com/KPaccarizi/_Pong_Game" target="_blank">
+            <button>View Details</button>
+        </a>
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/tetris.png" alt="Project 8">
+          <h2>Tetris</h2>
+          <p>This project implements a basic Tetris game using the Pygame library. 
+            Tetris is a classic puzzle game where you arrange falling blocks to complete rows.
+
+            The project includes background images, fonts for the game, the main script, and a file to record game scores.
+
+            </p>
+          <a href="https://github.com/KPaccarizi/_Tetris_Game" target="_blank">
+            <button>View Details</button>
+        </a>
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="assets/images/projects/color.png" alt="Project 9">
+          <h2>Color Blindness Analysis </h2>
+          <p>RGB dataset for color representation. Analysis of a dataset aimed at detecting colors in images using Python. 
+            The focus is on color detection for individuals with color blindness (ColorBlind).
+             Explore the RGB dataset for color representation.
+
+          </p>
+          <a href="https://github.com/KPaccarizi/Color-detection-dataset-for-ColorBlind" target="_blank">
+            <button>View Details</button>
+        </a>
+      </div>
+      <div class="project" onmouseover="hoverEffect(this)" onmouseout="removeEffect(this)">
+          <img src="project10.jpg" alt="Project 10">
+          <h2>Project 10</h2>
+          <p>Description of project 10. A masterpiece!</p>
+          <a href="https://github.com/KPaccarizi/Adventure-Game" target="_blank">
+            <button>View Details</button>
+        </a>
+      </div>
+  </section>
+
+  <footer>
+      <p>&copy; 2024 My Portfolio. All Rights Reserved.</p>
+  </footer>
+    <script src="assets/js/projects.js"></script>
+ 
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
