@@ -10,7 +10,34 @@ const addEventOnElements = function (elements, eventType, callback) {
   for (let i = 0, len = elements.length; i < len; i++) {
     elements[i].addEventListener(eventType, callback);
   }
+
+
 }
+
+
+
+function toggle_light_mode() {
+  const body = document.body;
+  body.classList.toggle('dark-mode');
+
+  // Save the mode to localStorage
+  if(body.classList.contains('dark-mode')) {
+      localStorage.setItem('dark-mode', 'true');
+  } else {
+      localStorage.setItem('dark-mode', 'false');
+  }
+}
+
+// Check saved mode on page load
+window.addEventListener('DOMContentLoaded', () => {
+  if(localStorage.getItem('dark-mode') === 'true') {
+      document.body.classList.add('dark-mode');
+      document.getElementById('dark_toggler').checked = true;
+  } else {
+      document.body.classList.remove('dark-mode');
+      document.getElementById('dark_toggler').checked = false;
+  }
+});
 
 
 
@@ -70,3 +97,27 @@ for (let i = 0, len = revealDelayElements.length; i < len; i++) {
 
 window.addEventListener("scroll", reveal);
 window.addEventListener("load", reveal);
+
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the default form submission
+
+  const form = this;
+  const formData = new FormData(form);
+
+  // Initialize EmailJS with your user ID
+  emailjs.init('52jlHWUaDr76JBPHc'); // Replace 'YOUR_USER_ID' with your EmailJS user ID
+
+
+  emailjs.sendForm('service_gg5f5ta', 'template_xfjfskc', formData)
+    .then(response => {
+      console.log('Success:', response);
+      alert('Thank you for your message! I will get back to you as soon as possible.');
+      form.reset(); // Reset the form after successful submission
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('Oops! Something went wrong. Please try again.');
+    });
+});
+

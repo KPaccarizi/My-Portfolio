@@ -1,0 +1,35 @@
+html,
+html *,
+body,
+body * {
+  cursor: none;
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+  pointer-events: none;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cursor-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #b83030f1;
+  pointer-events: none; /* ensure cursor doesn't block clicks */
+  z-index: 9999; /* ensure it's above all other elements */
+
+
+}
+
+.cursor-dot-outline {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(211, 115, 115, 0.959);
+}

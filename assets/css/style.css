@@ -95,13 +95,6 @@ body {
 }
 
 
-
-
-
-/*-----------------------------------*\
-  #RESET
-\*-----------------------------------*/
-
 *,
 *::before,
 *::after {
@@ -311,6 +304,7 @@ body.nav-active { overflow: hidden; }
   z-index: 2;
   visibility: hidden;
   transition: var(--transition-3);
+  
 }
 
 .navbar.active {
@@ -367,6 +361,171 @@ body.nav-active { overflow: hidden; }
 
 
 
+/* Dark Mode toggle switch button */
+.dark_toggler {
+  -webkit-appearance: none;
+  position: relative;
+  cursor: pointer;
+  width: 100px;
+  height: 40px;
+  background-image: url(https://i.postimg.cc/857jHw2q/Screenshot-2020-04-16-at-1-07-06-PM.png);
+  background-size: cover;
+  border-radius: 50px;
+  outline: none;
+  transition: background-image 0.9s;
+  box-shadow: 0px 2px 5px 1px gray;
+}
+
+.dark_toggler:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: navy;
+  border-radius: 50px;
+  transition: all 0.9s;
+  background-color: #f7ca33;
+}
+
+.dark_toggler:checked {
+  background-image: url(https://i.postimg.cc/Hn0nstVK/Screenshot-2020-04-16-at-1-07-19-PM.png);
+  transition: background-image 0.9s;
+  box-shadow: 0px 2px 5px 1px rgb(187, 134, 201);
+}
+
+.dark_toggler:checked:before {
+  transform: translate(150%);
+  transition: all 0.9s;
+  background-color: #bb86fc;
+}
+
+
+.navbar-toggler {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  border-color: white;
+  border: none;
+  outline: none;
+  padding: 0;
+  margin: 1.25rem 1rem;
+}
+
+.line {
+  fill: none;
+  stroke: black;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1), stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 50px;
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.open .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.open .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+
+.open .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+
+/* Default (light mode) styles */
+/* Your existing styles go here */
+
+/* Default (light mode) styles */
+body {
+  background-color: #ffffff; /* Light background */
+  color: #000000; /* Dark text color */
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212; /* Dark background */
+  color: #ffffff; /* Light text color */
+}
+
+/* Navbar in dark mode */
+body.dark-mode .navbar {
+  background-color: #333333; /* Darker navbar background */
+  color: #ffffff; /* Light text color */
+}
+
+/* Other elements in dark mode */
+body.dark-mode .nav-open-btn {
+  color: #ffffff; /* Light text color for the navigation open button */
+}
+
+body.dark-mode .navbar-link {
+  color: #ffffff; /* Light text color for navigation links */
+}
+
+body.dark-mode .dark_toggler {
+  box-shadow: 0px 2px 5px 1px rgba(255, 255, 255, 0.5); /* Adjust shadow in dark mode */
+}
+
+body.dark-mode .dark_toggler:before {
+  background-color: #bb86fc; /* Color of the toggle button in dark mode */
+}
+
+/* Dark mode for other elements like buttons, inputs, etc. */
+body.dark-mode .btn {
+  background-color: #444444; /* Dark background for buttons */
+  color: #ffffff; /* Light text color for buttons */
+}
+
+body.dark-mode input,
+body.dark-mode textarea {
+  background-color: #333333; /* Dark background for input fields */
+  color: #ffffff; /* Light text color for input fields */
+  border: 1px solid #555555; /* Adjust border color */
+}
+
+/* Example of handling other sections */
+body.dark-mode section {
+  background-color: #222222; /* Dark background for sections */
+  color: #ffffff; /* Light text color */
+}
+
+body.dark-mode header {
+  background-color: #333333; /* Darker header and footer background */
+  color: #ffffff; /* Light text color */
+}
+
+/* Exclude footer from dark mode */
+footer {
+ 
+  color: #000000; /* Keep this dark */
+}
+
 
 
 /*-----------------------------------*\
@@ -390,8 +549,8 @@ body.nav-active { overflow: hidden; }
 }
 
 .hero-banner .w-100 {
-  mask-image: url("../images/Blob.svg");
-  -webkit-mask-image: url("../images/Blog.svg");
+  mask-image: url("../images/profile1.jpg");
+  -webkit-mask-image: url("../images/profile1.jpg");
   mask-repeat: no-repeat;
   -webkit-mask-repeat: no-repeat;
   mask-position: center;
