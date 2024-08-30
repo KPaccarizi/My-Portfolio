@@ -954,6 +954,7 @@ footer {
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-1);
   font-size: 11px !important; /* Ensure this rule applies */
+  color:#222222
 
 }
 .qualification__degree{
