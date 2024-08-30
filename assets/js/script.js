@@ -15,6 +15,54 @@ const addEventOnElements = function (elements, eventType, callback) {
 }
 
 
+/*==================== QUALIFICATION TABS ====================*/
+const tabs = document.querySelectorAll('[data-target]'),
+      tabContents = document.querySelectorAll('[data-content]')
+
+tabs.forEach(tab =>{
+    tab.addEventListener('click', () =>{
+        const target = document.querySelector(tab.dataset.target)
+
+        tabContents.forEach(tabContent =>{
+            tabContent.classList.remove('qualification__active')
+        })
+        target.classList.add('qualification__active')
+
+        tabs.forEach(tab =>{
+            tab.classList.remove('qualification__active')
+        })
+        tab.classList.add('qualification__active')
+    })
+})
+
+
+
+/**
+ * skills toggle
+ */
+const toggleBtnBox = document.querySelector("[data-toggle-box]");
+const toggleBtns = document.querySelectorAll("[data-toggle-btn]");
+const skillsBox = document.querySelector("[data-skills-box]");
+
+function elemToggleFunc(elem) {
+  elem.classList.toggle("active");
+}
+
+for (let i = 0; i < toggleBtns.length; i++) {
+  toggleBtns[i].addEventListener("click", function () {
+    // Toggle active class on the buttons and skills box
+    toggleBtns.forEach((btn) => btn.classList.remove("active"));
+    this.classList.add("active");
+
+    // Toggle active class on the skills-box
+    if (this.textContent === "Skills") {
+      skillsBox.classList.remove("active");
+    } else {
+      skillsBox.classList.add("active");
+    }
+  });
+}
+
 
 function toggle_light_mode() {
   const body = document.body;

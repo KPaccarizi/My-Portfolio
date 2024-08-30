@@ -527,7 +527,14 @@ footer {
 }
 
 
-
+.dark-mode .skills {
+  background-color: #222222; /* Darker background */
+  border: 0px solid #ffffff; /* White border */
+  width: 180%; /* Ensure width matches the light mode width */
+  max-width: 1400px; /* Ensure max-width is consistent */
+  padding: 40px; /* Maintain padding */
+  margin: 0 auto; /* Center the container horizontally */
+}
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
@@ -580,7 +587,250 @@ footer {
 
 
 
+/*-----------------------------------*\
+ * #SKILLS
+\*-----------------------------------*/
 
+.skills { padding-block: var(--section-padding); }
+
+.skills-content { margin-bottom: 50px; }
+
+.skills-toggle {
+  background: var(--bg-secondary);
+  position: relative;
+  width: max-content;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 100px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.skills-toggle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: 93px;
+  background: var(--raw-seinna);
+  border-radius: 100px;
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+.skills-toggle.active::before {
+  left: 98px;
+  width: 94px;
+}
+
+.toggle-btn {
+  color: var(--color-primary);
+  font-family: var(--ff-poppins);
+  padding: 5px 25px;
+  transition: var(--transition-1);
+}
+
+.toggle-btn.active { color: var(--white); }
+
+.skills-box.active .skills-list,
+.skills-box .tools-list { display: none; }
+
+.skills-box .skills-list,
+.skills-box.active .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+
+}
+
+.skill-card {
+  position: relative;
+  background: var(--bg-secondary);
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-1);
+  cursor: help;
+}
+
+.skill-card:hover .tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+
+  /**
+   * SKILLS
+   */
+   .skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    width: 80%; /* Adjust this percentage as needed */
+    max-width: 800px; /* Optional: set a max-width to avoid getting too wide */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  :root {
+    --h3-font-size: 1.5rem;
+    --font-medium: 500;
+    --first-color: #3498db;
+    --small-font-size: 0.875rem;
+    --smaller-font-size: 0.75rem;
+    --text-color-light: #b0b0b0;
+    --mb-0: 0px;
+    --mb-1: 1rem;
+    --mb-2: 2rem;
+    --mb-0-25: 0.25rem;
+  }
+  
+
+/*==================== QUALIFICATION ====================*/
+
+/*==================== QUALIFICATION CONTAINER ====================*/
+.qualification__container {
+  max-width: 1400px; /* Increase maximum width */
+  margin: 0 auto; /* Center the container */
+  padding: 3rem; /* Increase padding for more space inside */
+  
+   /* Adding background and border */
+   border: 2px solid var(--first-color); /* Border around the element */
+   border-radius: 8px; /* Rounded corners if desired */
+   padding: 10px; /* Space inside the border */
+}
+
+
+
+.section {
+  text-align: center;
+}
+
+.section__title {
+  font-size: 4rem; /* Adjust size as needed */
+  font-weight: bold;
+  margin-bottom: 0.5rem; /* Space between title and subtitle */
+}
+
+.section__subtitle {
+  font-size: 3.2rem; /* Adjust size as needed */
+  color: var(--text-color-light); /* Adjust color if needed */
+  margin-bottom: 2rem; /* Space between subtitle and content */
+}
+
+
+
+/*==================== QUALIFICATION ====================*/
+.qualification__tabs{
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: var(--mb-2);
+  margin-bottom: 3rem; /* Increase margin below the tabs */
+  font-size: 15px !important; /* Ensure this rule applies */
+  
+}
+
+.qualification__button{
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+}
+
+.qualification__button:hover{
+  color: var(--first-color);
+}
+
+.qualification__icon{
+  font-size: 1.8rem;
+  margin-right: var(--mb-0-25);
+}
+
+
+.qualification__data{
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  column-gap: 1.5rem;
+
+}
+
+.qualification__title{
+  font-size: .990rem;
+  font-weight: var(--font-medium);
+  font-size: 15px !important; /* Ensure this rule applies */
+
+}
+
+.qualification__subtitle{
+  display: inline-block;
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+  font-size: 15px !important; /* Ensure this rule applies */
+
+}
+.qualification__degree{
+  display: inline-block;
+  font-size: var(--smaller-font-size);
+  margin-bottom: var(--mb-0);
+}
+
+.qualification__calendar{
+  font-size: var(--smaller-font-size);
+  color: var(--text-color-light);
+}
+
+
+.qualification__rounder{
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  background-color: var(--first-color);
+  border-radius: 50%;
+}
+
+
+.qualification__line{
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: var(--first-color);
+  transform: translate(6px, -7px);
+
+}
+
+.qualification__data > div:first-child {
+  text-align: right;
+}
+
+.qualification__data > div:last-child {
+  text-align: left;
+}
+
+
+.qualification [data-content]{
+  display: none;
+}
+
+.qualification__active[data-content]{
+  display: block;
+}
+
+.qualification__button.qualification__active{
+  color: var(--first-color);
+}
 
 /*-----------------------------------*\
   #ABOUT
@@ -1067,5 +1317,47 @@ textarea.input-field {
   .about .wrapper { gap: 100px; }
 
   .about .grid-list { gap: 60px; }
+
+}
+
+@media screen and (max-width: 350px){
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+
+  .qualification__data{
+    gap: .5rem;
+  }
+
+  .qualification__sections{
+    display: grid;
+    grid-template-columns: .6fr;
+    justify-content: center;
+  }
+}
+
+
+@media screen and (min-width: 768px){
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+
+
+.qualification__tabs{
+  justify-content: center;
+}
+
+.qualification__button{
+  margin: 0 var(--mb-1);
+}
+
+.qualification__sections{
+  grid-template-columns: .5fr;
+}
+
 
 }
