@@ -953,7 +953,7 @@ footer {
   display: inline-block;
   font-size: var(--small-font-size);
   margin-bottom: var(--mb-1);
-  font-size: 15px !important; /* Ensure this rule applies */
+  font-size: 11px !important; /* Ensure this rule applies */
 
 }
 .qualification__degree{
