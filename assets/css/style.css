@@ -535,6 +535,34 @@ footer {
   padding: 40px; /* Maintain padding */
   margin: 0 auto; /* Center the container horizontally */
 }
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .dark-mode .skills {
+    width: 100%; /* Adjust width to fit smaller screens */
+    max-width: 1200px; /* Reduce max-width for medium screens */
+    padding: 30px; /* Adjust padding for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .dark-mode .skills {
+    width: 100%; /* Full width for smaller screens */
+    max-width: 800px; /* Reduce max-width for smaller screens */
+    padding: 25px; /* Reduce padding for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .dark-mode .skills {
+    width: 100%; /* Full width for the smallest screens */
+    max-width: 100%; /* Remove max-width to allow full-width expansion */
+    padding: 20px; /* Further reduce padding for the smallest screens */
+    margin: 0 auto; /* Ensure container remains centered */
+  }
+}
+
+
 /*-----------------------------------*\
   #HERO
 \*-----------------------------------*/
@@ -585,15 +613,17 @@ footer {
   gap: 12px;
 }
 
-
-
 /*-----------------------------------*\
  * #SKILLS
 \*-----------------------------------*/
 
-.skills { padding-block: var(--section-padding); }
+.skills { 
+  padding-block: var(--section-padding); 
+}
 
-.skills-content { margin-bottom: 50px; }
+.skills-content { 
+  margin-bottom: 50px; 
+}
 
 .skills-toggle {
   background: var(--bg-secondary);
@@ -633,10 +663,14 @@ footer {
   transition: var(--transition-1);
 }
 
-.toggle-btn.active { color: var(--white); }
+.toggle-btn.active { 
+  color: var(--white); 
+}
 
 .skills-box.active .skills-list,
-.skills-box .tools-list { display: none; }
+.skills-box .tools-list { 
+  display: none; 
+}
 
 .skills-box .skills-list,
 .skills-box.active .tools-list {
@@ -649,10 +683,8 @@ footer {
 }
 
 @keyframes fadeIn {
-
   0% { opacity: 0; }
   100% { opacity: 1; }
-
 }
 
 .skill-card {
@@ -672,68 +704,176 @@ footer {
   opacity: 1;
 }
 
+/**
+ * SKILLS GRID
+ */
+/*-----------------------------------*\
+ * #SKILLS
+\*-----------------------------------*/
 
-  /**
-   * SKILLS
-   */
-   .skills {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 50px;
-    width: 80%; /* Adjust this percentage as needed */
-    max-width: 800px; /* Optional: set a max-width to avoid getting too wide */
-    margin: 0 auto; /* Center the container */
-  }
-  
-  :root {
-    --h3-font-size: 1.5rem;
-    --font-medium: 500;
-    --first-color: #3498db;
-    --small-font-size: 0.875rem;
-    --smaller-font-size: 0.75rem;
-    --text-color-light: #b0b0b0;
-    --mb-0: 0px;
-    --mb-1: 1rem;
-    --mb-2: 2rem;
-    --mb-0-25: 0.25rem;
-  }
-  
-/* Responsive Adjustments for Smaller Screens */
-@media (max-width: 768px) {
+.skills { 
+  padding-block: var(--section-padding); 
+  background-color: var(--bg-primary); /* Ensure background is set */
+}
+
+.skills-content { 
+  margin-bottom: 50px; 
+  color: var(--text-color-light); /* Adjust text color for dark mode */
+}
+
+.skills-toggle {
+  background: var(--bg-secondary);
+  position: relative;
+  width: max-content;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 100px;
+  box-shadow: var(--shadow-1);
+  z-index: 1;
+}
+
+.skills-toggle::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: 93px;
+  background: var(--raw-seinna);
+  border-radius: 100px;
+  transition: var(--transition-1);
+  z-index: -1;
+}
+
+.skills-toggle.active::before {
+  left: 98px;
+  width: 94px;
+}
+
+.toggle-btn {
+  color: var(--color-primary);
+  font-family: var(--ff-poppins);
+  padding: 5px 25px;
+  transition: var(--transition-1);
+}
+
+.toggle-btn.active { 
+  color: var(--white); 
+}
+
+.skills-box.active .skills-list,
+.skills-box .tools-list { 
+  display: none; 
+}
+
+.skills-box .skills-list,
+.skills-box.active .tools-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.skill-card {
+  position: relative;
+  background: var(--bg-secondary);
+  width: 80px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-12);
+  box-shadow: var(--shadow-1);
+  cursor: help;
+  color: var(--text-color-light); /* Ensure text inside cards is visible in dark mode */
+}
+
+.skill-card:hover .tooltip {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/**
+ * SKILLS GRID
+ */
+.skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+  width: 80%; /* Adjust this percentage as needed */
+  max-width: 800px; /* Optional: set a max-width to avoid getting too wide */
+  margin: 0 auto; /* Center the container */
+}
+
+:root {
+  --h3-font-size: 1.5rem;
+  --font-medium: 500;
+  --first-color: #3498db;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.75rem;
+  --text-color-light: #b0b0b0;
+  --mb-0: 0px;
+  --mb-1: 1rem;
+  --mb-2: 2rem;
+  --mb-0-25: 0.25rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
   .skills {
-    grid-template-columns: 1fr 1fr; /* Maintain two columns */
-    gap: 30px; /* Adjust the gap for smaller screens */
-    width: 90%; /* Increase width for smaller screens */
-    max-width: none; /* Remove max-width restriction */
+    grid-template-columns: 1fr 1fr; /* Keep two columns */
+    width: 95%; /* Slightly increase width for smaller screens */
+    max-width: 100%; /* Remove max-width restriction */
+    gap: 40px; /* Adjust gap for smaller screens */
+    background-color: var(--bg-primary); /* Ensure background is set for dark mode */
   }
 
   .skill-card {
     width: 70px; /* Slightly smaller skill cards */
     height: 70px;
-    margin: 0 auto; /* Center the cards within their columns */
+  }
+}
+
+@media (max-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr 1fr; /* Maintain two columns */
+    gap: 30px; /* Adjust the gap for smaller screens */
+  }
+
+  .skill-card {
+    width: 65px; /* Smaller skill cards */
+    height: 65px;
   }
 }
 
 @media (max-width: 480px) {
   .skills {
-    grid-template-columns: 1fr 1fr; /* Maintain two columns */
-    gap: 20px; /* Reduce gap further for very small screens */
-    width: 100%; /* Use full width for very small screens */
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 20px; /* Reduce gap further for smaller screens */
+    width: 100%; /* Full width */
+    background-color: var(--bg-primary); /* Ensure background is set for dark mode */
+  }
+
+  .skills-content {
+    margin-bottom: 30px; /* Adjust space between text and cards */
+    color: var(--text-color-light); /* Ensure text is visible in dark mode */
   }
 
   .skill-card {
     width: 60px; /* Further reduce skill card size */
     height: 60px;
-    margin: 0 auto; /* Center the cards within their columns */
-  }
-
-  .skill-card h3 {
-    font-size: var(--small-font-size); /* Adjust font size for small screens */
+    margin: 0 auto; /* Center skill cards */
   }
 }
-
-
 
 /*==================== QUALIFICATION ====================*/
 
