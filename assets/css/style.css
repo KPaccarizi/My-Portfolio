@@ -699,6 +699,41 @@ footer {
     --mb-0-25: 0.25rem;
   }
   
+/* Responsive Adjustments for Smaller Screens */
+@media (max-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr 1fr; /* Maintain two columns */
+    gap: 30px; /* Adjust the gap for smaller screens */
+    width: 90%; /* Increase width for smaller screens */
+    max-width: none; /* Remove max-width restriction */
+  }
+
+  .skill-card {
+    width: 70px; /* Slightly smaller skill cards */
+    height: 70px;
+    margin: 0 auto; /* Center the cards within their columns */
+  }
+}
+
+@media (max-width: 480px) {
+  .skills {
+    grid-template-columns: 1fr 1fr; /* Maintain two columns */
+    gap: 20px; /* Reduce gap further for very small screens */
+    width: 100%; /* Use full width for very small screens */
+  }
+
+  .skill-card {
+    width: 60px; /* Further reduce skill card size */
+    height: 60px;
+    margin: 0 auto; /* Center the cards within their columns */
+  }
+
+  .skill-card h3 {
+    font-size: var(--small-font-size); /* Adjust font size for small screens */
+  }
+}
+
+
 
 /*==================== QUALIFICATION ====================*/
 
